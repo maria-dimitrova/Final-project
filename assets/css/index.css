@@ -1,0 +1,172 @@
+/*----------------------------------------HEADER-------------------------------------------------*/
+.navbar ul li, footer .col-md-4 h3, body #news-articles .articles h2 {
+  font-size: 1.3em;
+  line-height: 60px;
+  letter-spacing: 2px; }
+
+body {
+  background-color: #766151; }
+  body #navbar-height {
+    height: 120px;
+    background-color: #fee202; }
+  body #top-nav {
+    color: #514947; }
+    body #top-nav #nav-line1 {
+      background-color: #514947;
+      height: 7px; }
+    body #top-nav #nav-line2 {
+      background-color: #48372f;
+      height: 3px; }
+
+/*-------------------------------------NAVBAR------------------------------------------------>*/
+.navbar {
+  background-color: #fff;
+  width: 100%;
+  text-align: center; }
+  .navbar ul {
+    text-align: center; }
+    .navbar ul a:link {
+      color: #000000;
+      text-decoration: none; }
+    .navbar ul a:visited {
+      color: #000000;
+      text-decoration: none; }
+    .navbar ul a:hover {
+      color: #7EC1B0;
+      text-decoration: none; }
+    .navbar ul a:active {
+      color: #7EC1B0;
+      text-decoration: none; }
+    .navbar ul li {
+      display: inline;
+      margin: 20px; }
+      @media screen and (max-width: 640px) {
+        .navbar ul li {
+          margin: 0;
+          display: block; } }
+
+/*--------------------------------------GALLERY-----------------------------------------------------*/
+.masonry-layout {
+  backgroud-color: white;
+  column-count: 3; }
+  @media only screen and (max-width: 768px) {
+    .masonry-layout {
+      column-count: 2; } }
+  @media only screen and (max-width: 320px) {
+    .masonry-layout {
+      column-count: 1; } }
+  .masonry-layout .layout-panel {
+    padding: 10px;
+    break-inside: avoid;
+    border-radius: 5px;
+    overflow: hidden; }
+    .masonry-layout .layout-panel .panel-content {
+      text-align: justify;
+      background-color: #CFC8A1; }
+      .masonry-layout .layout-panel .panel-content .post-image {
+        width: 100%;
+        height: auto; }
+
+/*-----------------------------------FOOTER---------------------------------------------------------------*/
+footer {
+  width: 100%;
+  background-color: #48372f;
+  clear: both; }
+  footer .col-md-4 {
+    text-align: center; }
+    footer .col-md-4 h3 {
+      color: #fee202; }
+    footer .col-md-4 ul {
+      font-size: 1em;
+      line-height: 30px;
+      color: #fee202; }
+
+---------------------------------------RESET---------------------------------------------------- >
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  background-image: url("../images/bg-blue.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 16px; }
+  body .new {
+    height: 350px;
+    width: 100%;
+    margin: 0;
+    background-image: url("../images/2.jpg");
+    background-size: 100% auto;
+    background-repeat: no-repeat; }
+    @media screen and (max-width: 640px) {
+      body .new {
+        height: 200px; } }
+    body .new #text {
+      background: rgba(255, 255, 255, 0.4);
+      padding: 10px;
+      margin: 20px;
+      float: right;
+      width: 40%;
+      height: auto;
+      text-align: center; }
+      body .new #text h3 {
+        font-size: 1.3em;
+        line-height: 60px; }
+    body .new #new-image {
+      margin: 0;
+      width: 100%;
+      height: auto; }
+  body #news-articles {
+    width: 90%;
+    margin: 0 auto; }
+    body #news-articles .articles {
+      width: 30%;
+      margin: 5% 2%;
+      margin-right: 0;
+      float: left; }
+      body #news-articles .articles h2 {
+        text-align: center; }
+      body #news-articles .articles img {
+        width: 100%;
+        border-radius: 5px; }
+
+/*# sourceMappingURL=index.css.map */

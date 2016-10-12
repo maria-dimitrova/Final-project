@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Art posts</title>
+<script type = "text/javascript" src = "node_modules/angular/angular.min.js"></script>
+<script type = "text/javascript" src = "node_modules/angular-route/angular-route.min.js"></script>
+<script type = "text/javascript" src = "node_modules/angular-animate/angular-animate.min.js"></script>
+<script type = "text/javascript" src = "node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+<script type = "text/javascript" src="node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+
+<script type = "text/javascript" src = "app/app.js"></script>
+<script type = "text/javascript" src = "app/routes/home/homeCtrl.js"></script>
+<script type = "text/javascript" src = "app/routes/gallery/galleryCtrl.js"></script>
+<script type = "text/javascript" src = "app/routes/profile/profileCtrl.js"></script>
+<script type = "text/javascript" src = "app/routes/login/loginCtrl.js"></script>
+
+
+<link rel="stylesheet" href= "node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+<link rel = "stylesheet" type = "text/css" href = "assets/css/index.css">
+
+</head>
+<body ng-app="mainApp" ng-controller="mainCtrl">
+
+<!-- ===========FACEBOOK LOGIN================== -->
+
+<script>
+window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1120426538045057',
+      xfbml      : true,
+      version    : 'v2.7'
+    });
+    FB.AppEvents.logPageView();
+    
+    FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+      });
+  };
+
+/*
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/bg_BG/sdk.js#xfbml=1&version=v2.7";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk')); */
+
+//
+function statusChangeCallback(response) {
+    if (response.status === 'connected') {
+      testAPI();
+    } else if (response.status === 'not_authorized') {
+    	// sign please..
+    } else {
+      // 'Please log ' +'into Facebook.';
+    }
+  }
+  
+function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me?fields=id,name,email,permissions', function(response) {
+    	console.log(response.email);
+      console.log('Successful login for: ' + response.email);
+      console.log(response);
+     //     'Thanks for logging in, ' + response.mail + '!';
+    });
+  }
+</script>
+
+<!-- ===========FACEBOOK LOGIN===========END======= -->
+
+<div id = "navbar-height"></div>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation" id="top-nav">
+          <div class="container">
+          
+            <div class="navbar-header">
+              <!-- Logo Starts -->
+              <a class="navbar-brand" href="#home">LOGO</a>
+              <!-- #Logo Ends -->
+
+
+              <button type="button" class="navbar-toggle" ng-click="isNavCollapsed = !isNavCollapsed">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+               
+
+            </div>
+
+
+            <!-- Nav Starts -->
+            <div class="navbar-collapse collapse" uib-collapse="isNavCollapsed" aria-expanded="false" aria-hidden="true">
+              <ul class="nav navbar-nav navbar-right scroll">
+                 <li ><a href="#/home">Home</a></li>
+                 <li ><a href="#/gallery">Browse</a></li>
+                 <li ><a href="#/profile">Profile</a></li>
+                 <li ><a href="#/login">Login</a></li>
+              </ul>
+            </div>
+           
+            <!-- #Nav Ends -->
+          </div>
+			 <div id = "nav-line2"></div>
+			 <div id = "nav-line1"></div>
+   </div>
+   
+  
+<div ng-view></div>
+
+	<section>
+		
+		<div id = "news-articles">
+			<article id = "1" class = "articles">
+				<h2>Etiam tellus</h2>
+				
+			</article>
+			<article id = "2" class = "articles">
+				<h2>Donec augue</h2>
+				
+			</article>
+			<article id = "3" class = "articles">
+				<h2>Adipiscing elit</h2>
+				
+			</article>
+		</div>
+	</section>
+	<footer>
+	
+	 <div class="container">
+	   <div class="row">
+	       <div class="col-md-4">  
+	          	<h3>About</h3>
+				<ul>
+					<li>Consectetur</li>
+					<li>Adipiscing</li>
+					<li>Qui</li>
+					<li>Elit</li>
+				</ul>
+				</div>
+	       <div class="col-md-4">
+	          <h3>QA</h3>
+				<ul>
+					<li>Rorro</li>
+					<li>Ipsum</li>
+					<li>Dolorem</li>
+					<li>Quisquam</li>
+				</ul>
+	       </div>
+	       <div class="col-md-4"> 
+	       		<h3>Site Map</h3>
+				<ul>
+					<li>Est</li>
+					<li>Donec</li>
+					<li>Rristique</li>
+					<li>Du donec</li>
+				</ul>
+	       </div>
+	    </div>
+	</div>
+	</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+@mixin linkState($unactiveColor, $activeColor) { 
+	a:link    { color: $unactiveColor; text-decoration: none; }
+ 	a:visited { color: $unactiveColor; text-decoration: none; }
+ 	a:hover   { color: $activeColor; text-decoration: none; }
+ 	a:active  { color: $activeColor; text-decoration: none; }
+}

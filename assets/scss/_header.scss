@@ -1,0 +1,28 @@
+/*----------------------------------------HEADER-------------------------------------------------*/
+
+	
+	%links {
+			font-size: $fontSizeL;
+			line-height: 60px;
+			letter-spacing: 2px;
+	}
+body {
+	background-color: $darkGrey;
+	#navbar-height{
+		height: 120px;
+		background-color: $darkBlue;
+	}
+	#top-nav {
+		color: $black;
+		#nav-line1{
+		background-color: $black;
+		height: 7px;
+		}
+		#nav-line2{
+		background-color: $lightBlue;
+		height: 3px;
+		
+		}
+		
+	}
+}
