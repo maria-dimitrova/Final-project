@@ -1,0 +1,24 @@
+/*-------------------------------------------ImageView-----------------------------------------------------------*/
+
+.containerImageView {
+	background-color: $panelBackground;
+	.imageView {
+		display: block;
+		margin: auto;
+		width: 100%;
+		height: auto;
+	}
+	
+	.descImageView {
+		
+		height: 500px;
+		width: 100%;
+		
+		.titleImage{
+			
+		}
+		.descImage{
+			padding: 30px;
+		}
+	}
+}

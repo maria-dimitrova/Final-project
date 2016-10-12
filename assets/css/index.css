@@ -8,14 +8,14 @@ body {
   background-color: #766151; }
   body #navbar-height {
     height: 120px;
-    background-color: #fee202; }
+    background-color: #3a3635; }
   body #top-nav {
-    color: #514947; }
+    color: #0b0706; }
     body #top-nav #nav-line1 {
-      background-color: #514947;
+      background-color: #0b0706;
       height: 7px; }
     body #top-nav #nav-line2 {
-      background-color: #48372f;
+      background-color: #f9eddf;
       height: 3px; }
 
 /*-------------------------------------NAVBAR------------------------------------------------>*/
@@ -62,24 +62,38 @@ body {
     overflow: hidden; }
     .masonry-layout .layout-panel .panel-content {
       text-align: justify;
-      background-color: #CFC8A1; }
+      background-color: #f9eddf; }
       .masonry-layout .layout-panel .panel-content .post-image {
         width: 100%;
         height: auto; }
 
+/*-------------------------------------------ImageView-----------------------------------------------------------*/
+.containerImageView {
+  background-color: #CFC8A1; }
+  .containerImageView .imageView {
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: auto; }
+  .containerImageView .descImageView {
+    height: 500px;
+    width: 100%; }
+    .containerImageView .descImageView .descImage {
+      padding: 30px; }
+
 /*-----------------------------------FOOTER---------------------------------------------------------------*/
 footer {
   width: 100%;
-  background-color: #48372f;
+  background-color: #f9eddf;
   clear: both; }
   footer .col-md-4 {
     text-align: center; }
     footer .col-md-4 h3 {
-      color: #fee202; }
+      color: #3a3635; }
     footer .col-md-4 ul {
       font-size: 1em;
       line-height: 30px;
-      color: #fee202; }
+      color: #3a3635; }
 
 ---------------------------------------RESET---------------------------------------------------- >
 html, body, div, span, applet, object, iframe,

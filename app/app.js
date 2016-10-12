@@ -2,7 +2,7 @@
  * 
  */
 
-var app = angular.module('mainApp', ['ngAnimate', 'ui.bootstrap', 'ngRoute', 'ngSanitize'])
+var app = angular.module('mainApp', ['ngAnimate', 'ui.bootstrap', 'ngRoute'])
 	.config(function ($routeProvider) {
 		$routeProvider
 		.when('/home', {
@@ -12,21 +12,18 @@ var app = angular.module('mainApp', ['ngAnimate', 'ui.bootstrap', 'ngRoute', 'ng
 		})
 		.when('/gallery', {
 			templateUrl: 'app/routes/gallery/gallery.html',
-			controller: 'galleryCtrl',
-			css: 'assets/css/index.css'
+			controller: 'galleryCtrl'
+		})
+		.when('/image', {
+			templateUrl: 'app/routes/imageView/image.html',
+			controller: 'imageCtrl'
 		})
 		.when('/profile', {
 			templateUrl: 'app/routes/profile/profile.html',
-			controller: 'profileCtrl',
-			css: 'assets/css/index.css'
-		})
-		.when('/login', {
-			templateUrl: 'app/routes/login/login.html',
-			controller: 'loginCtrl',
+			controller: 'profileCtrl'
 		})
 		.otherwise('/home');
 	})
-	
 	.controller( 'mainCtrl', function ($scope) {
     
-	})
+})
