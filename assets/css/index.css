@@ -5,14 +5,14 @@
   letter-spacing: 2px; }
 
 body {
-  background-color: #766151; }
+  background-color: #3a3635; }
   body #navbar-height {
     height: 120px;
-    background-color: #3a3635; }
+    background-color: #f9eddf; }
   body #top-nav {
     color: #0b0706; }
     body #top-nav #nav-line1 {
-      background-color: #0b0706;
+      background-color: #1a1a1a;
       height: 7px; }
     body #top-nav #nav-line2 {
       background-color: #f9eddf;
@@ -20,7 +20,7 @@ body {
 
 /*-------------------------------------NAVBAR------------------------------------------------>*/
 .navbar {
-  background-color: #fff;
+  background-color: #3a3635;
   width: 100%;
   text-align: center; }
   .navbar ul {
@@ -45,9 +45,22 @@ body {
           margin: 0;
           display: block; } }
 
+.upload-container {
+  width: 100%;
+  background-color: #625a57; }
+  .upload-container .form-upload {
+    width: 80%;
+    margin: auto; }
+    .upload-container .form-upload #upload-title {
+      width: 100%; }
+    .upload-container .form-upload #upload-image {
+      margin: auto; }
+    .upload-container .form-upload #upload-desc {
+      width: 100%; }
+
 /*--------------------------------------GALLERY-----------------------------------------------------*/
 .masonry-layout {
-  backgroud-color: white;
+  backgroud-color: #766151;
   column-count: 3; }
   @media only screen and (max-width: 768px) {
     .masonry-layout {
@@ -59,17 +72,21 @@ body {
     padding: 10px;
     break-inside: avoid;
     border-radius: 5px;
-    overflow: hidden; }
+    overflow: hidden;
+    color: #CFC8A1; }
     .masonry-layout .layout-panel .panel-content {
+      padding: 3%;
       text-align: justify;
-      background-color: #f9eddf; }
+      background-color: #625a57; }
+      .masonry-layout .layout-panel .panel-content .panel-title {
+        font-size: 1.5em; }
       .masonry-layout .layout-panel .panel-content .post-image {
         width: 100%;
         height: auto; }
 
 /*-------------------------------------------ImageView-----------------------------------------------------------*/
 .containerImageView {
-  background-color: #CFC8A1; }
+  background-color: #625a57; }
   .containerImageView .imageView {
     display: block;
     margin: auto;
@@ -84,16 +101,16 @@ body {
 /*-----------------------------------FOOTER---------------------------------------------------------------*/
 footer {
   width: 100%;
-  background-color: #f9eddf;
+  background-color: #625a57;
   clear: both; }
   footer .col-md-4 {
     text-align: center; }
     footer .col-md-4 h3 {
-      color: #3a3635; }
+      color: #CFC8A1; }
     footer .col-md-4 ul {
       font-size: 1em;
       line-height: 30px;
-      color: #3a3635; }
+      color: #CFC8A1; }
 
 ---------------------------------------RESET---------------------------------------------------- >
 html, body, div, span, applet, object, iframe,
@@ -139,7 +156,7 @@ table {
   border-spacing: 0; }
 
 body {
-  background-image: url("../images/bg-blue.png");
+  background-color: #766151;
   background-repeat: no-repeat;
   background-size: 100% auto;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;

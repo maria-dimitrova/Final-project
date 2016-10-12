@@ -4,6 +4,7 @@
 @import 'variables';
 @import 'header';
 @import 'navbar';
+@import 'upload';
 @import 'gallery';
 @import 'imageView';
 @import 'footer';
@@ -12,7 +13,7 @@
 
 body {
 
-	background-image: url('../images/bg-blue.png');
+	background-color: $bgColor;
 	background-repeat: no-repeat;
 	background-size: 100% auto;
 	

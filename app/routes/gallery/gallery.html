@@ -1,49 +1,9 @@
 <div class="masonry-layout">
-	  <div class="layout-panel">
-	    <div class="panel-content">
-	    	<img class = "post-image"alt="" src="assets/images/img9.jpg">
-			<p>Integer porta, diam eget lobortis pulvinar, sem dui vehicula felis, nec tincidunt enim sem a arcu. </p>
-	    </div>
-	  </div>
-	  <div class="layout-panel">
-	    <div class="panel-content">
-	     	<img class = "post-image"alt="" src="assets/images/img1.png">
-			<p>Integer porta, diam eget lobortis pulvinar, sem dui vehicula felis, nec tincidunt enim sem a arcu. </p>
-	    </div>
-	  </div>
-	  <div class="layout-panel">
-	    <div class="panel-content">
-	     <img class = "post-image"alt="" src="assets/images/img8.jpg">
-				<p>Integer porta, diam eget lobortis pulvinar, sem dui vehicula felis, nec tincidunt enim sem a arcu. </p>
-	    </div>
-	  </div>
-	   <div class="layout-panel">
-	    <div class="panel-content">
-	     	<img class = "post-image"alt="" src="assets/images/img6.jpg">
-				<p>Integer porta, diam eget lobortis pulvinar, sem dui vehicula felis, nec tincidunt enim sem a arcu. </p>
-				
-	    </div>
-	  </div>
-	   <div class="layout-panel">
-	    <div class="panel-content">
-	     	<img class = "post-image"alt="" src="assets/images/img5.jpg">
-				<p>Integer porta, diam eget lobortis pulvinar, sem dui vehicula felis, nec tincidunt enim sem a arcu. </p>
-				
-	    </div>
-	  </div>
-	   <div class="layout-panel">
-	    <div class="panel-content">
-	     	<img class = "post-image"alt="" src="assets/images/img2.jpg">
-				<p>Integer porta, diam eget lobortis pulvinar, sem dui vehicula felis, nec tincidunt enim sem a arcu. </p>
-				
-	    </div>
-	  </div>
-	   <div class="layout-panel">
-	    <div class="panel-content">
-	     <img class = "post-image"alt="" src="assets/images/img4.jpg">
-				<p>Integer porta, diam eget lobortis pulvinar, sem dui vehicula felis, nec tincidunt enim sem a arcu. </p>
-				
-	    </div>
-	  </div>
-	
-	</div>
+<div ng-repeat="post in posts" class="layout-panel">
+ 		<div class="panel-content">
+ 		<img ng-src="FinalProject/{{post.ImagePath}}" class = "post-image" /> 
+ 		<h1 class="panel-title">{{post.Title}}</h1>
+ 		<p class="panel-desc">{{post.Description}}</p>
+ 		</div>
+ 	</div>
+ </div>

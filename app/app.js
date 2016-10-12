@@ -18,9 +18,17 @@ var app = angular.module('mainApp', ['ngAnimate', 'ui.bootstrap', 'ngRoute'])
 			templateUrl: 'app/routes/imageView/image.html',
 			controller: 'imageCtrl'
 		})
+		.when('/upload', {
+			templateUrl: 'app/routes/upload/upload.html',
+ 			controller: 'uploadCtrl'
+  		})
 		.when('/profile', {
 			templateUrl: 'app/routes/profile/profile.html',
 			controller: 'profileCtrl'
+		})
+		.when('/login', {
+			templateUrl: 'app/routes/login/login.html',
+			controller: 'loginCtrl'
 		})
 		.otherwise('/home');
 	})

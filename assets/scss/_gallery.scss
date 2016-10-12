@@ -1,7 +1,7 @@
 /*--------------------------------------GALLERY-----------------------------------------------------*/
 
 .masonry-layout {
-	backgroud-color: white;
+	backgroud-color: $bgColor;
 	column-count: 3;
 	@media only screen and (max-width: 768px) {
 	column-count: 2;
@@ -14,10 +14,15 @@
 	 	break-inside: avoid;
 	 	border-radius: 5px;
 	 	overflow: hidden;
+	 	color: $textPr;
 		.panel-content {
+			padding: 3%;
 			text-align: justify;
-			background-color: $lightBlue;
-		 
+			background-color: $footerBg;
+		 .panel-title{
+		 	font-size: 1.5em;
+		 	
+		 }
 		  .post-image {
 				width: 100%;
 				height: auto;

@@ -1,7 +1,7 @@
 /*-----------------------------------FOOTER---------------------------------------------------------------*/
 footer {
 	width: 100%;
-	background-color: $lightBlue;
+	background-color: $footerBg;
 	clear: both;
 	
 	.col-md-4 {
@@ -9,13 +9,13 @@ footer {
 		
 		h3{
 		@extend %links;
-		color: $darkBlue;
+		color: $textPr;
 		}
 		ul {
 		
 		font-size: 1em;
 		line-height: 30px;
-		color:$darkBlue;
+		color:$textPr;
 		}
 	}
 }
