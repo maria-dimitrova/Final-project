@@ -7,16 +7,22 @@ var app = angular.module('mainApp', ['ngAnimate', 'ui.bootstrap', 'ngRoute'])
 		$routeProvider
 		.when('/home', {
 			templateUrl: 'app/routes/home/home.html',
-			controller: 'homeCtrl',
-			css: 'assets/css/index.css'
+			controller: 'homeCtrl'
 		})
 		.when('/gallery', {
 			templateUrl: 'app/routes/gallery/gallery.html',
 			controller: 'galleryCtrl'
 		})
-		.when('/image', {
+		.when('/gallery/:image*', {
 			templateUrl: 'app/routes/imageView/image.html',
 			controller: 'imageCtrl'
+			/*params: {
+				id: '',
+				ImagePath: 'post.ImagePath',
+				Title: 'post.Title',
+				Description: 'post.Description',
+				UserId: 'post.UserId'
+		        }*/
 		})
 		.when('/upload', {
 			templateUrl: 'app/routes/upload/upload.html',

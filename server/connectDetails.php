@@ -9,7 +9,7 @@ if(!$conn) {
 	echo 'not connected';
 }
 
-$db = mysqli_select_db($conn, 'finalproject');
+$db = mysqli_select_db($conn, 'final-project');
 if(!$db) {
 	echo 'no database selected';
 }

@@ -1,6 +1,75 @@
 <?php
  
  require 'connectDetails.php';
+ 
+ $title = isset($_POST['title']) ? $_POST['title']: 'title';
+ $description = isset($_POST['description']) ? $_POST['description'] : 'description';
+ $directory = isset($_POST['selectDir']) ? $_POST['selectDir'] : 'common';
+ $rating = isset($_POST['rating']) ? $_POST['rating'] : '';
+ $user_id = isset($_POST['id']) ? $_POST['id']: '1';
+ 
+  $gallery = "../uploads/";
+  $gallery_small = "../uploads/small/";
+ 
+  foreach($_FILES as $index => $file) {
+  	 
+  	 $name = $file["name"];
+  	 $path = $gallery.$name;
+  	 $path_small = $gallery_small.$name;
+  if( move_uploaded_file($file['tmp_name'], $path)) {
+ 		echo "successfull";
+ 	} 
+  	 print_r($file);
+  	 $size_info = getimagesize($path);
+  	 $width = $size_info[0];
+  	 $height = $size_info[1];
+  	 echo $width, $height;
+  	 $width_small = 200;
+  	 $height_small = $height/($width/200);
+  	 $thumb_new = imagecreatetruecolor($width_small,$height_small);
+  	
+  	 switch(strtolower($file['type']))
+  	 {
+  	 	case 'image/jpeg':
+  	 		$image = imagecreatefromjpeg($path);
+  	 		break;
+  	 	case 'image/png':
+  	 		$image = imagecreatefrompng($path);
+  	 		break;
+  	 	case 'image/gif':
+  	 		$image = imagecreatefromgif($path);
+  	 		break;
+  	 	default:
+  	 		exit('Unsupported type: '.$file['type']);
+  	 }
+  	 imagecopyresized($thumb_new,$image,0,0,0,0,$width_small,$height_small,$width,$height);
+  	 switch(strtolower($file['type'])){
+  	 	case 'jpg' || 'jpeg':
+  	 		imagejpeg($thumb_new,$path_small,100);
+  	 		break;
+  	 	case 'png':
+  	 		imagepng($thumb_new,$path_small,100);
+  	 		break;
+  	 
+  	 	case 'gif':
+  	 		imagegif($thumb_nre,$path_small,100);
+  	 		break;
+  	 	default:
+  	 		exit('Unsupported type: '.$file['type']);
+  	 }
+  	 
+   	 
+  	 $query = "INSERT INTO `posts` (`id`, `Title`,`ImagePath`, `ThImagePath`, `Description`,`Rating`, `Folder`,  `UserId`)
+  	 VALUES (NULL, '$title', '$path', '$path_small','$description', '$rating','$directory', '$user_id');";
+  	  
+  	 if ( mysqli_query($conn, $query)) {
+  	 	echo "New records created successfully";
+  	 } else {
+  	 	echo "Error: ". mysqli_error($conn);
+  	 }; 
+  	
+  }
+ 
  /* 
   if(!empty($_FILES['image'])){
  	$ext = pathinfo($_FILES['image']['name'],PATHINFO_EXTENSION);
@@ -10,33 +79,6 @@
  }else{
  	echo "Image Is Empty";
  } */
- 
- $title = isset($_POST['title']) ? $_POST['title']: 'title';
- $description = isset($_POST['description']) ? $_POST['description'] : 'description';
- $directory = isset($_POST['selectDir']) ? $_POST['selectDir'] : 'common';
- $rating = isset($_POST['rating']) ? $_POST['rating'] : '';
- $user_id = isset($_POST['id']) ? $_POST['id']: '1';
- 
-  $gallery = "../uploads/";
- 
-  foreach($_FILES as $index => $file) {
-  	 
-  	 $name = $file["name"];
-  	 $path = $gallery.$name;
-  	 
-  	 move_uploaded_file($file['tmp_name'], $path);
-  	 
-  	 $query = "INSERT INTO `posts` (`id`, `Title`,`ImagePath`, `Description`,`Rating`, `Folder`,  `UserId`)
-  	 VALUES (NULL, '$title', '$path','$description', '$rating','$directory', '$user_id');";
-  	  
-  	 if ( mysqli_query($conn, $query)) {
-  	 	echo "New records created successfully";
-  	 } else {
-  	 	echo "Error: ". mysqli_error($conn);
-  	 };
-  	
-  }
- 
  /*  $files = isset($_FILES['image']) ? $_FILES['image'] : '';
   
   for ($i = 0; $i < count($files); $i++) {
@@ -72,3 +114,29 @@
 
  
 /* echo $result; */ 
+  	 
+  	 /* create a new, "virtual" image */
+  	/*  $virtual_image = imagecreatetruecolor($desired_width, $desired_height);*/
+  	 
+  	  /*copy source image at a resized size */
+  	/*  imagecopyresampled($virtual_image, $source_image, 0, 0, 0, 0, $desired_width, $desired_height, $width, $height);
+  	 
+  	 
+  	 imagejpeg($virtual_image, $dest);
+
+  	 switch(strtolower($file['type']))
+  	 {
+  	 	case 'image/jpeg':
+  	 		$image = imagecreatefromjpeg($file['tmp_name']);
+  	 		break;
+  	 	case 'image/png':
+  	 		$image = imagecreatefrompng($file['tmp_name']);
+  	 		break;
+  	 	case 'image/gif':
+  	 		$image = imagecreatefromgif($file['tmp_name']);
+  	 		break;
+  	 	default:
+  	 		exit('Unsupported type: '.$file['type']);
+  	 }
+  	 return $file;  */
+  	 

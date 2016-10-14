@@ -9,6 +9,14 @@
 	@media only screen and (max-width: 320px) {
 	column-count: 1;
 	}
+	.gallery-click{
+		position: relative;
+		display: inline-block;
+ 		 width:100%;
+ 		 height:100%;
+ 		
+  		z-index: 3;
+	}
 	.layout-panel {
 		 padding: 10px;
 	 	break-inside: avoid;
