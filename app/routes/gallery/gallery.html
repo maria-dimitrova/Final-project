@@ -1,10 +1,22 @@
 <div class="masonry-layout">
-<div ng-repeat="post in posts" class="layout-panel" ng-animate=" 'animate' ">
+<div ng-repeat="post in posts" class="layout-panel" ng-mouseover="animate">
  		 <a ng-href="#/gallery/{{post.id}}" class = "gallery-click">
  		<div class="panel-content" >
- 		<img ng-src="FinalProject/{{post.ThImagePath}}" class = "post-image" /> 
- 		<h1 class="panel-title">{{post.Title}}</h1>
- 		<p class="panel-desc">{{post.Description}}</p>
+ 			<div class="post-image-wrap">
+	 		<img ng-src="FinalProject/{{post.ThImagePath}}" class = "post-image" /> 
+	 		</div>
+	 		<h1 class="panel-title">{{post.Title}}</h1>
+	 		<p class="panel-desc">{{post.Description}}</p>
  		</div></a>
+	 		<span uib-rating ng-model="rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['1','2','3']" aria-labelledby="default-rating"></span>
+<!-- 	    	<span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span> -->
+			<!-- <span>Rating: {{ (rating + rate) /2 }}</span>  -->
+			<span>Rating: {{ rating.toFixed(2) }}</span>
+			<div class="fb-like"
+				 data-href="https://maria-dimitrova.github.io/"
+				 data-layout="button"
+				 data-action="like"
+				 data-size="small"
+				 data-share="false"></div>
  	</div>
  </div>

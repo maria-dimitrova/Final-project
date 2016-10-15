@@ -98,9 +98,24 @@ body {
       border: 1px solid #C93F1E; }
       .masonry-layout .layout-panel .panel-content .panel-title {
         font-size: 1.5em; }
-      .masonry-layout .layout-panel .panel-content .post-image {
+      .masonry-layout .layout-panel .panel-content .post-image-wrap {
         width: 100%;
         height: auto; }
+        .masonry-layout .layout-panel .panel-content .post-image-wrap .post-image {
+          width: 100%;
+          height: 90%; }
+  .masonry-layout .layout-panel.ng-enter {
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -webkit-transition-delay: 2s;
+    transition-delay: 2s;
+    opacity: 0.5;
+    position: relative;
+    opacity: 0;
+    top: 10px;
+    left: 20px; }
 
 .animate-enter,
 .animate-leave {
