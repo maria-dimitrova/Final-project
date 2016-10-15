@@ -2,9 +2,15 @@
 	  <div class="layout-panel">
 	    <div class="panel-content">
 	    	<img class = "post-image" alt="" src="assets/images/img9.jpg">
-	    	<span uib-rating ng-model="rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['1','2','3']" aria-labelledby="default-rating"></span>
+	    	<span uib-rating ng-model="raate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" ng-click="calculateRating()" titles="['1','2','3']" aria-labelledby="default-rating"></span>
 <!-- 	    	<span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span> -->
-			<!-- <span>Rating: {{ (rating + rate) /2 }}</span>  -->
+			<span>Rating: {{ rating.toFixed(2) }}</span>
+			<div class="fb-like"
+				 data-href="https://maria-dimitrova.github.io/"
+				 data-layout="button"
+				 data-action="like"
+				 data-size="small"
+				 data-share="false"></div>
 			<p>Integer porta, diam eget lobortis pulvinar, sem dui vehicula felis, nec tincidunt enim sem a arcu. </p>
 	    </div>
 	  </div>
