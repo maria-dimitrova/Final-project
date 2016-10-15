@@ -8,7 +8,7 @@
 	ul {
 	
 	text-align: center;
-		@include linkState($unactiveColor,  $activeColor);
+		@include linkState($textPr,  $textAcc);
 		li{
 		display: inline;
 		margin: 20px;

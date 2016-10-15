@@ -2,7 +2,7 @@
  * 
  */
 
-var app = angular.module('mainApp', ['ngAnimate', 'ui.bootstrap', 'ngRoute'])
+var app = angular.module('mainApp', ['ngAnimate', 'ui.bootstrap', 'ngRoute', 'infinite-scroll'])
 	.config(function ($routeProvider) {
 		$routeProvider
 		.when('/home', {

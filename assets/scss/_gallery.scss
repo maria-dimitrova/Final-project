@@ -23,10 +23,11 @@
 	 	border-radius: 5px;
 	 	overflow: hidden;
 	 	color: $textPr;
+	 	@include linkState($textPr,  $textAcc);
 		.panel-content {
 			padding: 3%;
 			text-align: justify;
-			background-color: $footerBg;
+			border: 1px  solid $textPr;
 		 .panel-title{
 		 	font-size: 1.5em;
 		 	
