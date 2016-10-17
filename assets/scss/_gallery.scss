@@ -1,0 +1,27 @@
+/*--------------------------------------GALLERY-----------------------------------------------------*/
+
+.masonry-layout {
+	backgroud-color: white;
+	column-count: 3;
+	@media only screen and (max-width: 768px) {
+	column-count: 2;
+	}
+	@media only screen and (max-width: 320px) {
+	column-count: 1;
+	}
+	.layout-panel {
+		 padding: 10px;
+	 	break-inside: avoid;
+	 	border-radius: 5px;
+	 	overflow: hidden;
+		.panel-content {
+			text-align: justify;
+			background-color: $panelBackground;
+		 
+		  .post-image {
+				width: 100%;
+				height: auto;
+		  }
+		}
+	}
+}

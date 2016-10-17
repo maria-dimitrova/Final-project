@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+@import 'mixins';
+@import 'variables';
+@import 'header';
+@import 'navbar';
+@import 'gallery';
+@import 'footer';
+@import 'reset';
+
+
+body {
+
+	background-image: url('../images/bg-blue.png');
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 16px;
+	.new{
+		height: 350px;
+		width:100%;
+		margin: 0;
+		background-image: url('../images/2.jpg');
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+		@media screen and (max-width: 640px) {
+		height: 200px;
+		}
+		#text {
+		
+			background: rgba(255, 255, 255, 0.4);
+			padding: 10px; 
+			margin: 20px;
+			float: right;
+			width: 40%;
+			height: auto;
+	    	text-align: center;
+    	
+    		h3 {
+    		font-size: $fontSizeL;
+		line-height: 60px;
+    		}
+		}
+		#new-image{
+		margin: 0;
+		width: 100%;
+		height: auto;
+		}
+	}
+	#news-articles {
+		width: 90%;
+		margin: 0 auto;
+		
+		
+		.articles {
+		width: 30%;
+		margin: $marginM $marginS;
+		margin-right: 0;
+		float: left;
+		
+			h2 {
+			@extend %links;
+			text-align: center;
+			}
+			img {
+			width: 100%;
+			border-radius: 5px;
+			}
+		}
+	}
+}
+
