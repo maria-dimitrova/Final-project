@@ -1,0 +1,11 @@
+
+<div class = "upload-container" ng-controller="uploadCtrl">
+	<form ng-submit="submit()" name="form" role="form" class = "form-upload" enctype="multipart/form-data">
+		<input ng-model="title" type="text" id = "upload-title" />
+	  <input ng-model="image" multiple="multiple" id = "upload-image" type="file"onchange="angular.element(this).scope().uploadedFile(this)" style="width:400px" >
+	  <textarea ng-model="description" id="upload-desc" cols="30" rows="10"></textarea>
+	 <!--  <img ng-repeat = "file in currentFile" ng-src="{{image_source}}" style="width:300px;"> -->
+	  <input type="submit" id="submit" value="Submit" class="btn"/>
+		
+	</form>
+	</div>

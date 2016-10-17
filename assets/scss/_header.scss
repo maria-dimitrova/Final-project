@@ -7,19 +7,19 @@
 			letter-spacing: 2px;
 	}
 body {
-	background-color: $darkGrey;
+	background-color: $navbarBg;
 	#navbar-height{
-		height: 120px;
-		background-color: $darkBlue;
+		height: 110px;
+		background-color: $navbarAcc;
 	}
 	#top-nav {
 		color: $black;
 		#nav-line1{
-		background-color: $black;
+		background-color: $textAcc;
 		height: 7px;
 		}
 		#nav-line2{
-		background-color: $lightBlue;
+		background-color: $navbarAcc;
 		height: 3px;
 		
 		}
