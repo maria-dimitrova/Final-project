@@ -1,0 +1,40 @@
+/*-------------------------------------------ImageView-----------------------------------------------------------*/
+
+.containerImageView {
+	padding: 30px;
+	.content-panel{
+			border: 1px  solid $textPr;
+			padding: 20px;
+		.row {
+			width: 100%;
+			height: 100%;
+			.imageView {
+				display: block;
+				margin: auto;
+				width: 100%;
+				height: auto;
+			}
+			.videoView {
+				display: block;
+				margin: auto;
+				width: 100%;
+				height: auto;
+			}
+			
+			.descImageView {
+				
+				color: $textPr;
+				width: 100%;
+				text-align: center;
+				.titleImage{
+					padding: 30px;
+					font-size: 2em;
+				}
+				.descImage{
+					padding: 30px;
+				}
+				
+			}
+		}
+	}
+}

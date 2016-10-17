@@ -1,7 +1,7 @@
 /*--------------------------------------GALLERY-----------------------------------------------------*/
 
 .masonry-layout {
-	backgroud-color: white;
+	backgroud-color: $bgColor;
 	column-count: 3;
 	@media only screen and (max-width: 768px) {
 	column-count: 2;
@@ -9,19 +9,62 @@
 	@media only screen and (max-width: 320px) {
 	column-count: 1;
 	}
+	.gallery-click{
+		position: relative;
+		display: inline-block;
+ 		 width:100%;
+ 		 height:100%;
+ 			color: black;
+  		z-index: 3;
+  		
+	}
+	.gallery-click:hover .post-image{
+		animation: swim 1s ease;
+	}
 	.layout-panel {
-		 padding: 10px;
+		
 	 	break-inside: avoid;
 	 	border-radius: 5px;
 	 	overflow: hidden;
+	 	@include linkState($textPr,  $textAcc);
+		color: $textPr;
+		
 		.panel-content {
+			padding: 3%;
 			text-align: justify;
-			background-color: $panelBackground;
+			border: 1px  solid $textPr;
+		 .panel-title{
+		 	font-size: 1.5em;
+		 	padding: 0.7em;
+		 	
+		 }
+		 .panel-desc{
+		 	
 		 
-		  .post-image {
-				width: 100%;
-				height: auto;
+		 }
+		 .graphs{
+		 	text-align: right;
+		 }
+		 .post-image-wrap{
+		 	
+		 	position: relative;
+			  top: 10px;
+		 	overflow: hidden;
+		
+		 	margin-top: 5px;
+			  .post-image {
+			  position: relative;
+			  top: -10px;
+					width: 100%;
+					height: 100%;
+			  }
 		  }
 		}
+	}
+	.layout-panel.ng-enter {
+	  animation: 2s appear;
+	}
+	.layout-panel.ng-leave {
+	  animation: 1s disappear;
 	}
 }

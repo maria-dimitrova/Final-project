@@ -1,0 +1,27 @@
+.profile {
+	width: 100%;
+	color: red;
+
+	.row {
+	
+		.info-wrapper {
+			
+			div {
+				text-indent: 200px;
+			}
+		}
+		
+		.img-wrapper {
+			text-align: left;
+			
+			img {
+				border: 7px solid red;
+				border-radius: 70%;
+				width: 200px;
+				height: auto;
+			}
+		}
+		
+	}
+	
+}

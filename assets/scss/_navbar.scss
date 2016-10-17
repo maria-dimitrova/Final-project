@@ -1,20 +1,42 @@
 /*-------------------------------------NAVBAR------------------------------------------------>*/
 
 .navbar {
-	background-color: #fff;
+	background-color: $navbarBg;
 	width: 100%;
 	text-align: center;
-	
+	button{
+		opacity:0.7;
+	  margin: 20px;
+	}
 	ul {
 	
 	text-align: center;
-		@include linkState($unactiveColor,  $activeColor);
+		@include linkState($textPr,  $textAcc);
 		li{
 		display: inline;
 		margin: 20px;
 		@extend %links;
 			@media screen and (max-width: 640px) {
 			margin: 0;
+			display:block;
+				
+			}
+		}
+	}
+}
+
+.order {
+	ul {
+	padding:10px;
+	margin: 5px 0;
+	background-color: $footerBg;
+	text-align: center;
+		li{
+		display: inline;
+		margin: 20px;
+
+			@media screen and (max-width: 640px) {
+			margin: 5px 0;
 			display:block;
 				
 			}

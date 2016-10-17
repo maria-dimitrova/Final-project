@@ -1,1 +1,31 @@
-<div class="masonry-layout"></div>
+<div class="profile">
+	<div class="row">
+		<div class="col-md-7 info-wrapper">
+			<div>
+				<p>Name: {{ name }}</p>
+				<p>E-mail: {{ mail }} </p>
+			</div>
+		</div>
+		<div class="col-md-5 img-wrapper">
+			<img src="{{pictureUrl}}" alt="profile picture">
+		</div>
+	</div>
+	<br>
+	<a href="#/upload">Upload photo/video</a>
+<div class="masonry-layout" infinite-scroll="getMoreData()">
+<div ng-repeat="post in data" class="layout-panel" ng-style="myStyle2" ng-mouseover="mouseover()">
+ 		 <a ng-href="#/profile/{{post.id}}" class = "gallery-click" ng-mouseover="mouseover()">
+	 		<div class="panel-content"  ng-class="{min:boolChangeClass}">
+	 			<div class="post-image-wrap">
+		 		<img ng-src="{{post.ThImagePath}}" scroll class = "post-image" ng-class="{min:boolChangeClass}">
+		 		</div>
+		 		<h1 class="panel-title" ng-style="myStyle2"  >{{post.Title}}</h1>
+		 		<p class="panel-desc">{{post.Description}}</p>
+		 		<p class = "graphs">
+			 		<span class = "glyphicon glyphicon-plus">{{ post.Rating }}</span>
+					<span class="glyphicon glyphicon-heart-empty">{{post.Likes}}</span>
+				</p>
+	 		</div></a>
+ 	</div>
+ </div>
+</div>
