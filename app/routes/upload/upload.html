@@ -5,13 +5,14 @@
 	<div class = "col-md-10">
 
 	<form ng-submit="submit()" name="form" role="form" class = "form-upload" enctype="multipart/form-data">
-		<input ng-model="title" type="text" id = "upload-title" />
+		<label for = "upload-title" class = "label">Enter a title:</label>
+		<input ng-model="title" type="text" id = "upload-title" placeholder ="Your work's title..." />
 	  
-	  <label for = "file" id = "upload-label">Upload</label>
-	  <input ng-model="image" multiple="multiple" id = "upload-image"name = "file" type="file"onchange="angular.element(this).scope().uploadedFile(this)" style="width:400px" >
-	  <textarea ng-model="description" id="upload-desc" cols="30" rows="10"></textarea>
 	 <!--  <img ng-repeat = "file in currentFile" ng-src="{{image_source}}" style="width:300px;"> -->
-	  <input type="submit" id="submit" value="Submit"/>
+	  <input ng-model="image" multiple="multiple" id = "upload-image" name = "file" type="file"onchange="angular.element(this).scope().uploadedFile(this)" style="width:400px" >
+	  <label for = "upload-desc" class = "label">Enter a description:</label>
+	  <textarea ng-model="description" id="upload-desc" cols="30" rows="10" placeholder = "A description for the work..."></textarea>
+	  <label for = "upload-image" id = "upload-label">Upload</label> <input type="submit" id="submit" value="Submit"/>
 	</div>
 	<div class = "col-md-1"></div>
 		

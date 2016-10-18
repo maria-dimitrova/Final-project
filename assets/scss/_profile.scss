@@ -1,24 +1,57 @@
 .profile {
 	width: 100%;
-	color: red;
+	color: white;
 
 	.row {
-	
+	background-image: url('../images/12.jpg');
 		.info-wrapper {
+		padding-top: 5%;
+	
+			text-align: center;
 			
 			div {
 				text-indent: 200px;
+				#prof-name{
+				
+					font-family:'myFirstFont', serif;
+					font-size: 3em;
+				}
+				#prof-email{
+				padding: 1em;
+					font-size: 1.3em;
+					font-family:'mySecondFont',"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+				}
+				#upload-link{
+				font-size: 1.3em;
+				padding:1%;
+				line-height: 40px;
+				font-size: 2em;
+				}
+				 #upload-link:link    { color: white; text-decoration: none; }
+			 	#upload-link:visited { color: white; text-decoration: none; }
+			 	#upload-link:hover   { @extend %hover; color: red; text-decoration: none; }
+			 	#upload-link:active  { color: red; text-decoration: none; }
+					
+				
+				
 			}
 		}
 		
 		.img-wrapper {
-			text-align: left;
 			
 			img {
-				border: 7px solid red;
-				border-radius: 70%;
+				border: 2px solid white;
+				
 				width: 200px;
 				height: auto;
+			}
+			img:hover{ 
+			-webkit-filter: grayscale(100%);
+    		filter: grayscale(100%);
+    		-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+			transition: opacity 0.35s, transform 0.35s;
+			-webkit-transform: scale(1.1);
+			transform:  scale(1.1);
 			}
 		}
 		

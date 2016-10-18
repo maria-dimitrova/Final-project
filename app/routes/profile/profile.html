@@ -2,8 +2,9 @@
 	<div class="row">
 		<div class="col-md-7 info-wrapper">
 			<div>
-				<p>Name: {{ name }}</p>
-				<p>E-mail: {{ mail }} </p>
+				<p id = "prof-name">Name: {{ name }}</p>
+				<p id = "prof-email">E-mail: {{ mail }} </p>
+				<p><a href="#/upload" id = "upload-link">Upload photo/video</a></p>
 			</div>
 		</div>
 		<div class="col-md-5 img-wrapper">
@@ -11,8 +12,7 @@
 		</div>
 	</div>
 	<br>
-	<a href="#/upload">Upload photo/video</a>
-
+	
    
 <div  class="clearfix grid" infinite-scroll="getMoreData()"> 
    <div ng-repeat="image in profiledata track by $index" class="layout-panel" >
