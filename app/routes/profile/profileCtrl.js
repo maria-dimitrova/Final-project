@@ -19,17 +19,21 @@ app.controller('profileCtrl', function ($scope, $http, $location, $window, userS
 			var result = angular.fromJson(data);
 			
 			$scope.posts = result.data;
+			console.log(data);
  			if ($scope.posts == 'Problem 1') {
  				console.log('1');
- 				$scope.posts = undefined;
+ 				$scope.posts = 0;
  			}
  			if ($scope.posts == 'Problem 2') {
- 				console.log('2');
- 				$scope.posts = undefined;
+ 				console.log('No images yet');
+ 				$scope.posts = 0;
  			}
- 			if(userSrv.getPosts().length<= $scope.posts.length || userSrv.getPosts() == undefined || $scope.posts == undefined){
+ 			if(userSrv.getPosts() == undefined || $scope.posts == undefined){
+ 				var i =0;
+ 			} else if (userSrv.getPosts().length>= $scope.posts.length){
  				var i = userSrv.getPosts().length;
  			} else {
+ 				
  				var i =0;
  			}
  			for( ; i<$scope.posts.length; i++ ){
@@ -45,7 +49,7 @@ app.controller('profileCtrl', function ($scope, $http, $location, $window, userS
  		$scope.profiledata = userSrv.getPosts().slice(0, 0);
  		console.log($scope.data);
  	 	$scope.getMoreProfileData = function () {
- 	 	    $scope.prodiledata = UserSrv.getPosts().slice(0, $scope.profiledata.length + 4);
+ 	 	    $scope.prodiledata = userSrv.getPosts().slice(0, $scope.profiledata.length + 4);
  	 	}
 			
 	/*console.log(userSrv.getInfo()[0].id);

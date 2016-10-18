@@ -1,20 +1,41 @@
 .upload-container {
+background-image: url('../images/12.jpg');
+	padding: 5em;
 	width: 100%;
 	background-color: $footerBg;
 	.form-upload {
 	width: 80%;
 	margin: auto;
+	@media screen and (max-device-width: 640px) {	width: 80%; }
 		#upload-title {
 		width: 100%;
+		padding:1em;
+		}
+		#upload-label{
+			border:1px solid #fff;
+			color: white;
+			padding:1em;
+			margin:1em ;
+			font-size: 1.4em;
+			text-align: center;
+		}
+		#upload-label:hover{
+			color:red;
+			@extend %hover;
 		}
 		#upload-image{ 
-		margin: auto;
+		 width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
 		}
 		#upload-desc {
+		padding:1em;
 		width: 100%;
 		}
-		.btn{
-		
+		#submit{
+		@extend #upload-label;
+			background: rgba(0, 0, 0, 0);
 		}
 	}
 }

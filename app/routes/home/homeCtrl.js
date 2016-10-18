@@ -59,9 +59,9 @@ app.controller('homeCtrl', function ($scope, $window, userSrv){
 	  
 	  FB.login(function(response) {
 		  console.log('hi');
-		  document.getElementById('LoginText').style.color = 'blue';
+		/*  document.getElementById('LoginText').style.color = 'blue';
 		   // handle the response
-		 }, {scope: 'public_profile,email'});
+*/		 }, {scope: 'public_profile,email'});
 	  
 	  FB.XFBML.parse();
 

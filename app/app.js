@@ -51,12 +51,13 @@ var app = angular.module('mainApp', ['ngAnimate', 'ui.bootstrap', 'ngRoute', 'in
     }
     
     $scope.$on('$routeChangeStart', function() { 
-    	   if($location.$$path == '/home') {
+    	   if($location.$$path == '/gallery' || $location.$$path == '/upload' || $location.$$path=='/prfile') {
     		   $scope.boolfooter = false;
+
         	 
     	   } else {
     		   $scope.boolfooter = true;
-    		
+    		 
     	   }
         	   console.log($location.$$path)
     });

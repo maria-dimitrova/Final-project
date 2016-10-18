@@ -1,8 +1,12 @@
 /*-------------------------------------------ImageView-----------------------------------------------------------*/
 
 .containerImageView {
+
+background-image: url('../images/12.jpg');
+height: 100%;
 	padding: 30px;
 	.content-panel{
+	display:block;
 			border: 1px  solid $textPr;
 			padding: 20px;
 		.row {
@@ -30,11 +34,24 @@
 					padding: 30px;
 					font-size: 2em;
 				}
+				.titleImage:hover {
+					@extend %hover;
+				}
 				.descImage{
+				
 					padding: 30px;
+				}
+				.descImage:hover {
+					@extend %hover;
 				}
 				
 			}
 		}
+	}
+	.content-panel:hover{
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+		transition: opacity 0.35s, transform 0.35s;
+		-webkit-transform: scale(1.2);
+		transform:  scale(1.2);
 	}
 }
