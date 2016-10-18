@@ -1,21 +1,16 @@
 /*-----------------------------------FOOTER---------------------------------------------------------------*/
-footer {
-	width: 100%;
-	background-color: $footerBg;
-	clear: both;
-	
-	.col-md-4 {
-		text-align: center;
-		
-		h3{
-		@extend %links;
-		color: $textPr;
-		}
-		ul {
-		
-		font-size: 1em;
-		line-height: 30px;
-		color:$textPr;
-		}
-	}
+
+.footer {
+	opacity:1;
+  height: 40px;
+  background-color: $footerBg;
+  color: $textPr;
+  text-align:center;
+  p{
+  line-height: 40px;
+  }
+}
+
+.nofooter {
+	opacity: 0;
 }

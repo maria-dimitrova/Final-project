@@ -1,14 +1,14 @@
 <?php
 
  require 'connectDetails.php';
- 
- $id = isset($_POST['id1']) ? $_POST['id1'] : '1';
+ $_POST = json_decode(file_get_contents('php://input'), true);
+ $id = isset($_POST['id']) ? $_POST['id'] : '';
  if (!$id ) {
  	echo 'invalid input';
  	return;
  }
  $query ="SELECT `id`, `Title`, `Description`, `ImagePath`,  `ThImagePath`,`Folder`, `UserId` 
- 		FROM `posts`";
+ 		FROM `posts` WHERE `UserId` = $id";
  
 
  $result = mysqli_query($conn, $query) or trigger_error(mysqli_error($conn)." in ".$query);

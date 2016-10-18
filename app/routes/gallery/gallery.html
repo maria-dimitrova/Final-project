@@ -1,0 +1,48 @@
+<div class = "order" style = "color: white;"><ul>
+	<a href="javascript:void(0);" ng-click = "highestRating()">Highest Rating</a>
+	<a href="javascript:void(0);" ng-click = "lowestRating()">Lowest Rating</a>
+	<a href="javascript:void(0);" ng-click = "clearRating()">Clear Order</a>
+</ul></div>
+
+<div  class="clearfix grid" infinite-scroll="getMoreData()"> 
+   <div ng-repeat="post in data track by $index"" class="layout-panel" >
+     <figure class="effect-oscar fadeInUp">
+        <img  ng-src="{{post.ThImagePath}}" alt="{{post.Title}}"/>
+        <figcaption>
+            <h2>{{post.Title}}</h2>
+            <p class = "graphs">
+            <p><a ng-href="#/gallery/{{post.id}}" data-gallery>View more</a></p>
+			 <p>
+			 	<span class = "glyphicon glyphicon-plus">{{ post.Rating }}</span>
+				<span class="glyphicon glyphicon-heart-empty">{{post.Likes}}</span>
+			</p>            
+        </figcaption>
+    </figure>
+    
+  </div>
+</div>
+<!-- 
+ 		 <a ng-href="#/gallery/{{post.id}}" class = "gallery-click" ng-mouseover="mouseover()">
+	 		<div class="panel-content"  ng-class="{min:boolChangeClass}">
+	 			<div class="post-image-wrap">
+		 		<img ng-src="{{post.ThImagePath}}" scroll class = "post-image" ng-class="{min:boolChangeClass}">
+		 		</div>
+		 		<h1 class="panel-title" ng-style="myStyle2"  >{{post.Title}}</h1>
+		 		<p class="panel-desc">{{post.Description}}</p>
+		 		<p class = "graphs">
+			 		<span class = "glyphicon glyphicon-plus">{{ post.Rating }}</span>
+					<span class="glyphicon glyphicon-heart-empty">{{post.Likes}}</span>
+				</p>
+	 		</div></a>
+	 		<span uib-rating ng-model="rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" ng-click="calculateRating()" titles="['1','2','3']" aria-labelledby="default-rating"></span>
+	    	<span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
+			<span>Rating: {{ (rating + rate) /2 }}</span> 
+			
+			<div class="fb-like"
+				 data-href="https://maria-dimitrova.github.io/"
+				 data-layout="button"
+				 data-action="like"
+				 data-size="small"
+				 data-share="false"></div>
+ 	</div>
+ </div> -->

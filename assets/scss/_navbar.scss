@@ -1,20 +1,60 @@
 /*-------------------------------------NAVBAR------------------------------------------------>*/
+	 @font-face {
+	    font-family: 'myFirstFont';
+	    src: url('../GalileoFLF-Bold.ttf');
+	}
+	@font-face {
+	    font-family: 'mySecondFont';
+	    src: url('../Walkway.ttf');
+	}
+	
 
 .navbar {
 	background-color: $navbarBg;
 	width: 100%;
 	text-align: center;
-	
-	ul {
-	
-	text-align: center;
+	font-family:'mySecondFont', sans-serif;
+	.brand {
 		@include linkState($textPr,  $textAcc);
+		font-family:'myFirstFont', serif;
+		font-size: 60px;
+		line-height: 90px;
+	}
+	button{
+		opacity:0.7;
+	  margin: 20px;
+	}
+	.collapse {
+		ul {
+		
+		text-align: center;
+		color: white;
+		li{
+			display: inline;
+			margin: 20px;
+			@extend %links;
+				@media screen and (max-device-width: 640px) {
+				margin: 0;
+				display:block;
+					
+				}
+			}
+		}
+	}
+}
+
+.order {
+	ul {
+	padding:20px;
+	margin:0;
+	background-color: $footerBg;
+	text-align: center;
 		li{
 		display: inline;
 		margin: 20px;
-		@extend %links;
+
 			@media screen and (max-width: 640px) {
-			margin: 0;
+			margin: 5px 0;
 			display:block;
 				
 			}

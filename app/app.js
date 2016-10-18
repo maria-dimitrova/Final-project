@@ -3,11 +3,14 @@
  */
 
 var app = angular.module('mainApp', ['ngAnimate', 'ui.bootstrap', 'ngRoute', 'infinite-scroll', 'ngSanitize'])
-	.config(function ($routeProvider) {
+
+.config(function ($routeProvider) {
+		
 		$routeProvider
 		.when('/home', {
 			templateUrl: 'app/routes/home/home.html',
 			controller: 'homeCtrl'
+			
 		})
 		.when('/gallery', {
 			templateUrl: 'app/routes/gallery/gallery.html',
@@ -19,7 +22,7 @@ var app = angular.module('mainApp', ['ngAnimate', 'ui.bootstrap', 'ngRoute', 'in
 			/*params: {
 				id: '',
 				ImagePath: 'post.ImagePath',
-				Title: 'post.Title',
+				Title: 'post.Title',ss
 				Description: 'post.Description',
 				UserId: 'post.UserId'
 		        }*/
@@ -32,12 +35,29 @@ var app = angular.module('mainApp', ['ngAnimate', 'ui.bootstrap', 'ngRoute', 'in
 			templateUrl: 'app/routes/profile/profile.html',
 			controller: 'profileCtrl'
 		})
+		.when('/profile/:image*', {
+			templateUrl: 'app/routes/profileImages/image.html',
+			controller: 'profileImageCtrl'
+		})
 		.when('/login', {
-			templateUrl: 'app/routes/login/login.html',
-			controller: 'loginCtrl'
+			templateUrl: 'app/routes/home/home.html',
+			controller: 'homeCtrl'
 		})
 		.otherwise('/home');
 	})
-	.controller( 'mainCtrl', function ($scope) {
+.controller( 'mainCtrl', function ($scope, $window, $location) {
+    $scope.toTheTop = function() {
+    	$window.scrollTo(0, 0);
+    }
     
+    $scope.$on('$routeChangeStart', function() { 
+    	   if($location.$$path == '/home') {
+    		   $scope.boolfooter = false;
+        	 
+    	   } else {
+    		   $scope.boolfooter = true;
+    		
+    	   }
+        	   console.log($location.$$path)
+    });
 })

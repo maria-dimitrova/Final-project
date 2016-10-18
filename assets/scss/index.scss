@@ -2,7 +2,6 @@
 
 @import 'mixins';
 @import 'variables';
-@import 'header';
 @import 'navbar';
 @import 'upload';
 @import 'gallery';
@@ -11,14 +10,28 @@
 @import 'footer';
 @import 'reset';
 
-body {
+@import 'profile';
+@import 'home';
 
-	background-color: $bgColor;
+	%links {
+			font-size: $fontSizeL;
+			line-height: 60px;
+			letter-spacing: 2px;
+	}
+
+body {
+width: 100%;
+background-color: $bgColor;
 	background-repeat: no-repeat;
 	background-size: 100% auto;
-	
+	padding-bottom: 40px;
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-size: 16px;
+	background-color: $navbarBg;
+	height: 100%;
+	padding-bottom: 40px;
+
+	
 	.slide {
 	    position: relative;
 	    left: 0;
@@ -44,6 +57,37 @@ body {
 		    left: -100%;
 	}
 	
+	.animate-enter, 
+	.animate-leave
+	{ 
+	-webkit-transition: 1625ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+	-moz-transition: 1625ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+	-ms-transition: 1625ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+	-o-transition: 1625ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+	transition: 1625ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+	position: relative;
+	display: block;
+	overflow: hidden;
+	text-overflow: clip;
+	white-space:nowrap;
+	} 
+	
+	.animate-leave.animate-leave-active,
+	.animate-enter {
+	opacity: 0;
+	width: 0px;
+	height: 0px;
+	}
+	
+	.animate-enter.animate-enter-active, 
+	.animate-leave {
+	opacity: 1;
+	width: 150px;
+	height: 30px;
+	}
+	.min panel-content {
+	background-color: red;
+	}
 	.new{
 		height: 350px;
 		width:100%;
@@ -79,6 +123,7 @@ body {
 		width: 90%;
 		margin: 0 auto;
 		
+		
 		.articles {
 		width: 30%;
 		margin: $marginM $marginS;
@@ -96,4 +141,3 @@ body {
 		}
 	}
 }
-

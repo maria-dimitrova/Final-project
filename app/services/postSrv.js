@@ -1,7 +1,3 @@
-/**
- * 
- */
-
 app.factory("PostsSrv", function() {
 	console.log('me');
 	var posts = [];
@@ -19,6 +15,10 @@ app.factory("PostsSrv", function() {
 		    },
 		    addPost: function (postObject) {
 		    	posts.push(postObject);
+		    	return posts;
+		    },
+		    emptyArray: function () {
+		    	posts.length = 0;
 		    	return posts;
 		    }
 	  
