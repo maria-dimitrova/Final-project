@@ -4,10 +4,14 @@
 
 app.controller('profileCtrl', function ($scope, $http, $location, $window, userSrv){
 	
-	$scope.name = $window.localStorage.name;
-	$scope.mail = $window.localStorage.mail;
-	$scope.id = $window.localStorage.id;
-	$scope.pictureUrl = $window.localStorage.picture;
+	$scope.name = $window.localStorage.name || 'No profile';
+	$scope.mail = $window.localStorage.mail || 'No e-mail';
+	$scope.id = $window.localStorage.id || '';
+	$scope.pictureUrl = $window.localStorage.picture || 'http://live.warthunder.com/style/img/no_avatar.jpg';
+	
+	if (!$scope.id) {
+		$location.path('/home');
+	}
 	
 	var id = $scope.id;
 	

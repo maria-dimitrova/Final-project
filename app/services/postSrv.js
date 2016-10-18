@@ -8,7 +8,7 @@ app.factory("PostsSrv", function() {
 		    getAPost: function (idParam){
 		    	for (var i = 0; i< posts.length; i++){
 		    		if(posts[i].id == idParam) {
-		    			console.log(posts[i]);
+		    	//		console.log(posts[i]);
 		    			return posts[i];
 		    		}
 		    	}

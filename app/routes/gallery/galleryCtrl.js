@@ -51,14 +51,14 @@ app.controller('galleryCtrl',function ( $document, $window, $scope, $http, Posts
  				console.log('2');
  				$scope.posts = undefined;
  			}
- 			if(PostsSrv.getPosts().length<= $scope.posts.length || PostsSrv.getPosts() == undefined || $scope.posts == undefined){
+ 			if(PostsSrv.getPosts().length <= $scope.posts.length || PostsSrv.getPosts() == undefined || $scope.posts == undefined){
  				var i = PostsSrv.getPosts().length;
  			} else {
  				var i =0;
  			}
  			for( ; i<$scope.posts.length; i++ ){
  				PostsSrv.addPost($scope.posts[i]);
- 				
+ 				$scope.posts[i].Rating = Number($scope.posts[i].Rating).toFixed(2);
  			}
  			
  			$scope.data = PostsSrv.getPosts().slice(0, 12);

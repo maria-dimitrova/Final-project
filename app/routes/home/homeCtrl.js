@@ -3,8 +3,6 @@
  */
 
 app.controller('homeCtrl', function ($scope, $window, userSrv){
-		
-	$scope.infoResponse = {};
 	
 	  // This is called with the results from from FB.getLoginStatus().
 	  function statusChangeCallback(response) {
@@ -30,11 +28,11 @@ app.controller('homeCtrl', function ($scope, $window, userSrv){
 	  }
 
 	  
-	  /*function checkLoginState() {
+	  function checkLoginState() {
 	    FB.getLoginStatus(function(response) {
 	      statusChangeCallback(response);
 	    });
-	  }*/
+	  }
 
 	  window.fbAsyncInit = function() {
 	  FB.init({
@@ -95,6 +93,7 @@ app.controller('homeCtrl', function ($scope, $window, userSrv){
 	    });
 	    
 	  }
-	
 });
+ 
+
 

@@ -3,7 +3,7 @@
 	<div class = "col-md-10 content-panel">
 		<div class = "row">
 			<div class = "col-md-8" >
-		    	<video Class = "videoView" ng-show="!isExt" controls >
+		    	<video Class = "videoView" ng-show="isVid" controls >
 		    	<source ng-src="{{post.VideoPath}}" type="video/mp4">
 	
 		    	</video> 
@@ -16,14 +16,14 @@
 				<span uib-rating ng-model="rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" ng-click="calculateRating(isReadonly)" titles="['1','2','3']" aria-labelledby="default-rating"></span>
 <!-- 	    	<span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span> -->
 			<!-- <span>Rating: {{ (rating + rate) /2 }}</span>  -->
-				<span>{{ rating.toFixed(2) }}</span>
-				<span class="glyphicon glyphicon-heart-empty" read-only="isReadonlyLike" ng-click = "updateLikes(isReadonlyLike)">{{post.Likes}}</span>
-				<div class="fb-like"
+				<span>{{ rating }}</span>
+				<span class="glyphicon glyphicon-heart-empty" read-only="isReadonlyLike" ng-click = "updateLikes(isReadonlyLike)">{{ likes }}</span>
+				<!-- <div class="fb-like"
 				 data-href="https://maria-dimitrova.github.io/"
 				 data-layout="button"
 				 data-action="like"
 				 data-size="small"
-				 data-share="false"></div>
+				 data-share="false"></div> -->
  			
 			</div>
 		 	   </div>
