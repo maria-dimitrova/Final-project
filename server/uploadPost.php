@@ -7,6 +7,7 @@
  $directory = isset($_POST['selectDir']) ? $_POST['selectDir'] : 'common';
  $rating = isset($_POST['rating']) ? $_POST['rating'] : '';
  $user_id = isset($_POST['id']) ? $_POST['id']: '1';
+ $userName = isset($_POST['userName']) ? $_POST['userName'] : '';
  
   $gallery = "/Final-project-maria-markova-last/uploads/";
   $gallery_small = "/Final-project-maria-markova-last/uploads/small/";
@@ -93,8 +94,8 @@
    	 /* 	echo $output; }*/
    	 
    	  
-  	 $query = "INSERT INTO `posts` (`id`, `Title`,`ImagePath`, `ThImagePath`, `Description`,`Rating`, `Folder`,  `UserId`)
-  	 VALUES (NULL, '$title', '$path', '$path_small','$description', '$rating','$directory', '$user_id');";
+  	 $query = "INSERT INTO `posts` (`id`, `Title`,`ImagePath`, `ThImagePath`, `Description`,`Rating`, `Folder`,  `UserId`, `UserName`)
+  	 VALUES (NULL, '$title', '$path', '$path_small','$description', '$rating','$directory', '$user_id', '$userName');";
   	  
   	 if ( mysqli_query($conn, $query)) {
   	 	echo "New records created successfully";

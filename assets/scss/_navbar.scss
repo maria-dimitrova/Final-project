@@ -1,25 +1,51 @@
 /*-------------------------------------NAVBAR------------------------------------------------>*/
+	 @font-face {
+	    font-family: 'myFirstFont';
+	    src: url('../GalileoFLF-Bold.ttf');
+	}
+	@font-face {
+	    font-family: 'mySecondFont';
+	    src: url('../Walkway.ttf');
+	}
 
 .navbar {
 	background-color: $navbarBg;
 	width: 100%;
 	text-align: center;
-	button{
-		opacity:0.7;
-	  margin: 20px;
-	}
-	ul {
+	font-family:'myFirstFont', serif;
 	
-	text-align: center;
-		@include linkState($textPr,  $textAcc);
-		li{
-		display: inline;
-		margin: 20px;
-		@extend %links;
-			@media screen and (max-width: 640px) {
-			margin: 0;
-			display:block;
-				
+	.brand {
+		font-family:'myFirstFont', serif;
+		font-size: 60px;
+		line-height: 90px;
+	}
+	
+	.brand:hover {
+		text-decoration: none;
+	}
+	
+	button {
+		opacity:0.5;
+	    margin: 20px;
+	}
+	
+	.collapse {
+	
+		ul {
+			text-align: center;
+			color: white;
+			font-style: bold;
+			font-size: 2em;
+			font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+			@include linkState(white, red);
+			
+			li{
+				display: inline;
+				margin: 20px;
+				@media screen and (max-device-width: 640px) {
+					margin: 0;
+					display:block;
+				}
 			}
 		}
 	}
@@ -27,19 +53,25 @@
 
 .order {
 	ul {
-	padding:10px;
-	margin: 5px 0;
-	background-color: $footerBg;
-	text-align: center;
-		li{
-		display: inline;
-		margin: 20px;
-
+		padding:20px;
+		margin:0;
+		background-color: white;
+		text-align: center;
+		
+		li {
+			@include linkState(black, red);
+			display: inline-block;
+			margin: 0 2%;
+			letter-spacing: 1px;
+			
 			@media screen and (max-width: 640px) {
-			margin: 5px 0;
-			display:block;
-				
+				margin: 2% 0;
+				display:block;
 			}
+		}
+		
+		li:hover {
+			@extend %hover;
 		}
 	}
 }

@@ -1,11 +1,22 @@
-
 <div class = "upload-container" ng-controller="uploadCtrl">
-	<form ng-submit="submit()" name="form" role="form" class = "form-upload" enctype="multipart/form-data">
-		<input ng-model="title" type="text" id = "upload-title" />
-	  <input ng-model="image" multiple="multiple" id = "upload-image" type="file"onchange="angular.element(this).scope().uploadedFile(this)" style="width:400px" >
-	  <textarea ng-model="description" id="upload-desc" cols="30" rows="10"></textarea>
-	 <!--  <img ng-repeat = "file in currentFile" ng-src="{{image_source}}" style="width:300px;"> -->
-	  <input type="submit" id="submit" value="Submit" class="btn"/>
-		
-	</form>
+	<div class = "row">
+		<div class = "col-md-1">a</div>
+		<div class = "col-md-10">
+			<form ng-submit="submit()" name="form" role="form" class = "form-upload" enctype="multipart/form-data">
+				<label for = "upload-title" class = "label">Enter a title:</label>
+				<input ng-model="title" type="text" id = "upload-title" placeholder ="Your work's title..." />
+				 <!--  <img ng-repeat = "file in currentFile" ng-src="{{image_source}}" style="width:300px;"> -->
+				<input ng-model="image" multiple="multiple" id = "upload-image" name = "file" type="file"onchange="angular.element(this).scope().uploadedFile(this)" style="width:400px" >
+	  			<label for = "upload-desc" class = "label">Enter a description:</label>
+	  			<textarea ng-model="description" id="upload-desc" cols="30" rows="10" placeholder = "A description for the work..."></textarea>
+	 			<label for = "upload-image" id = "upload-label">Browse</label> <input type="submit" id="submit" value="Submit"/>
+			</form>
+		</div>
+		<div class = "col-md-1"></div>
 	</div>
+</div>
+
+<div class="absolute-div" ng-show="showState">
+	<p>File Upload Successfully!</p>
+	<a href="" ng-click="addNewPost()">Add new</a>
+</div>

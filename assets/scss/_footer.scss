@@ -1,11 +1,22 @@
 /*-----------------------------------FOOTER---------------------------------------------------------------*/
 
-.navbar-fixed-bottom {
-  height: 40px;
-  background-color: $footerBg;
-  color: $textPr;
-  text-align:center;
-  p{
-  line-height: 40px;
-  }
+.footer {
+
+	opacity:1;
+	  height: 40px;
+	  background-color: $footerBg;
+	  color: $textPr;
+	  text-align:center;
+	background-image: url('../images/12.jpg');
+	#foot-link{
+	font-size: 1.3em;
+	padding:1%;
+	line-height: 40px;
+	}
+	 #foot-link:link    { color: white; text-decoration: none; }
+ 	#foot-link:visited { color: white; text-decoration: none; }
+ 	#foot-link:hover   { color: red; text-decoration: none; @extend %hover;}
+ 	#foot-link:active  { color: red; text-decoration: none; }
+		
 }
+

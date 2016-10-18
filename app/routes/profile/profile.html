@@ -1,31 +1,32 @@
 <div class="profile">
-	<div class="row">
-		<div class="col-md-7 info-wrapper">
+	<div class="row big-info">
+		<div class="col-lg-7 col-md-12 info-wrapper">
 			<div>
-				<p>Name: {{ name }}</p>
-				<p>E-mail: {{ mail }} </p>
+				<p id = "prof-name">Name: {{ name }}</p>
+				<p id = "prof-email">E-mail: {{ mail }}</p>
+				<p><a href="#/upload" id="upload-link">Upload photo/video</a></p>
 			</div>
 		</div>
-		<div class="col-md-5 img-wrapper">
+		<div class="col-lg-5 col-md-12 img-wrapper">
 			<img src="{{pictureUrl}}" alt="profile picture">
 		</div>
 	</div>
 	<br>
-	<a href="#/upload">Upload photo/video</a>
-<div class="masonry-layout" infinite-scroll="getMoreData()">
-<div ng-repeat="post in data" class="layout-panel" ng-style="myStyle2" ng-mouseover="mouseover()">
- 		 <a ng-href="#/profile/{{post.id}}" class = "gallery-click" ng-mouseover="mouseover()">
-	 		<div class="panel-content"  ng-class="{min:boolChangeClass}">
-	 			<div class="post-image-wrap">
-		 		<img ng-src="{{post.ThImagePath}}" scroll class = "post-image" ng-class="{min:boolChangeClass}">
-		 		</div>
-		 		<h1 class="panel-title" ng-style="myStyle2"  >{{post.Title}}</h1>
-		 		<p class="panel-desc">{{post.Description}}</p>
-		 		<p class = "graphs">
-			 		<span class = "glyphicon glyphicon-plus">{{ post.Rating }}</span>
-					<span class="glyphicon glyphicon-heart-empty">{{post.Likes}}</span>
-				</p>
-	 		</div></a>
- 	</div>
- </div>
+	<div class="clearfix grid hed2" infinite-scroll="getMoreData()">
+		<h2>My Gallery</h2>
+   		<div ng-repeat="post in data track by $index" class="layout-panel" >
+	    	<figure class="effect-oscar fadeInUp">
+	        	<img  ng-src="{{post.ThImagePath}}" alt="{{post.Title}}"/>
+	        	<figcaption>
+		            <h2>{{post.Title}}</h2>
+		            <p class = "graphs">
+		            <p><a ng-href="#/profile/{{post.id}}" data-gallery>View more</a></p>
+					<p>
+						<span class = "glyphicon glyphicon-plus">{{ post.Rating }}</span>
+						<span class="glyphicon glyphicon-heart-empty">{{post.Likes}}</span>
+					</p>            
+	        	</figcaption>
+	    	</figure>
+ 		</div>
+	</div>
 </div>

@@ -1,27 +1,80 @@
 .profile {
+	font-family:'myFirstFont', serif;
 	width: 100%;
-	color: red;
+	color: white;
 
 	.row {
-	
+		background-image: url('../images/12.jpg');
+		
 		.info-wrapper {
+			min-height: 250px;
+			text-align: center;
 			
 			div {
 				text-indent: 200px;
+				
+				#prof-name {
+					font-family:'myFirstFont', serif;
+					font-size: 2.5em;
+				}
+				
+				#prof-email {
+					padding: 1em;
+					font-size: 1.3em;
+					font-family:'myFirstFont', serif;
+					//font-family:'mySecondFont',"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+				}
+				
+				#upload-link {
+					font-size: 1.3em;
+					padding:1%;
+					line-height: 40px;
+					font-size: 2em;
+					border: 1px solid white;
+				}
+				
+				#upload-link:link    { color: white; text-decoration: none; }
+			 	#upload-link:visited { color: white; text-decoration: none; }
+			 	#upload-link:hover   { @extend %hover; color: red; text-decoration: none; }
+			 	#upload-link:active  { color: red; text-decoration: none; }
 			}
 		}
 		
 		.img-wrapper {
-			text-align: left;
+			width: 200px;
+			height: 200px;
+			overflow: hidden;
+			border: 2px solid white;
+			padding-left: 0px;
 			
 			img {
-				border: 7px solid red;
-				border-radius: 70%;
-				width: 200px;
-				height: auto;
+				width: auto;
+				height: 200px;
+			}
+			
+			img:hover { 
+			-webkit-filter: grayscale(100%);
+    		filter: grayscale(100%);
+    		-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+			transition: opacity 0.35s, transform 0.35s;
+			-webkit-transform: scale(1.1);
+			transform:  scale(1.1);
 			}
 		}
-		
 	}
 	
+	.big-info {
+		padding-top: 5%;
+	}
+	
+	.hed2 {
+		font-size: 2.5em;
+		//padding-top: 1em;
+		
+		>h2 {
+			font-size: 2.8em;
+			padding-top: 0.1em;
+			padding-bottom: 10px;
+		}
+	}
 }

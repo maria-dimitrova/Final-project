@@ -7,4 +7,3 @@ npm install:
 - angular-sanitaze
 - angular-ui-bootstrap
 - bootstrap
-- ng-infinite-scroll

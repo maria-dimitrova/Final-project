@@ -3,13 +3,11 @@
  */
 
 app.controller('homeCtrl', function ($scope, $window, userSrv){
-		
-	$scope.infoResponse = {};
 	
 	  // This is called with the results from from FB.getLoginStatus().
 	  function statusChangeCallback(response) {
 	   // console.log('statusChangeCallback');
-	    console.log(response);
+	    //console.log(response);
 	    // The response object is returned with a status field that lets the
 	    // app know the current login status of the person.
 	    // Full docs on the response object can be found in the documentation
@@ -30,11 +28,12 @@ app.controller('homeCtrl', function ($scope, $window, userSrv){
 	  }
 
 	  
-	  /*function checkLoginState() {
+	  function checkLoginState() {
+		  FB =null;
 	    FB.getLoginStatus(function(response) {
 	      statusChangeCallback(response);
 	    });
-	  }*/
+	  }
 
 	  window.fbAsyncInit = function() {
 	  FB.init({
@@ -47,7 +46,7 @@ app.controller('homeCtrl', function ($scope, $window, userSrv){
 	  
 	  FB.getLoginStatus(function(response) {
 		  if (response.status === 'connected') {
-		    console.log('Logged in.');
+		    //console.log('Logged in.');
 		  }
 		  else {
 		    FB.login();
@@ -60,23 +59,23 @@ app.controller('homeCtrl', function ($scope, $window, userSrv){
 	  });
 	  
 	  FB.login(function(response) {
-		  console.log('hi');
-		  document.getElementById('LoginText').style.color = 'blue';
+		  //console.log('hi');
+		/*  document.getElementById('LoginText').style.color = 'blue';
 		   // handle the response
-		 }, {scope: 'public_profile,email'});
+*/		 }, {scope: 'public_profile,email'});
 	  
 	  FB.XFBML.parse();
 
 	  };
 
-	  // Load the SDK asynchronously
+	 /* // Load the SDK asynchronously
 	  (function(d, s, id) {
 	    var js, fjs = d.getElementsByTagName(s)[0];
-	    if (d.getElementById(id)) return;
+	    //if (d.getElementById(id)) return;
 	    js = d.createElement(s); js.id = id;
 	    js.src = "//connect.facebook.net/en_US/sdk.js";
 	    fjs.parentNode.insertBefore(js, fjs);
-	  }(document, 'script', 'facebook-jssdk'));
+	  }(document, 'script', 'facebook-jssdk'));*/
 
 	  // Here we run a very simple test of the Graph API after login is
 	  // successful.  See statusChangeCallback() for when this call is made.
@@ -84,7 +83,7 @@ app.controller('homeCtrl', function ($scope, $window, userSrv){
 	  function testAPI() {
 	    //console.log('Welcome!  Fetching your information.... ');
 	    FB.api('/me?fields=id,name,email,permissions,picture.width(200)', function(response) {
-	    	console.log(response.email);
+	    	//console.log(response.email);
 	     
 	    	$window.localStorage.setItem('id', response.id);
 	    	$window.localStorage.setItem('name', response.name);
@@ -95,6 +94,7 @@ app.controller('homeCtrl', function ($scope, $window, userSrv){
 	    });
 	    
 	  }
-	
 });
+ 
+
 

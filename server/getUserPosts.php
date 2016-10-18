@@ -7,7 +7,7 @@
  	echo 'invalid input';
  	return;
  }
- $query ="SELECT `id`, `Title`, `Description`, `ImagePath`,  `ThImagePath`,`Folder`, `UserId` 
+ $query ="SELECT `id`, `Title`, `Description`, `ImagePath`,  `ThImagePath`,`Folder`, `Rating`, `Likes`, `UserId`, `UserName` 
  		FROM `posts` WHERE `UserId` = $id";
  
 

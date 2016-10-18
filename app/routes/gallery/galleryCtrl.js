@@ -45,20 +45,20 @@ app.controller('galleryCtrl',function ( $document, $window, $scope, $http, Posts
  			$scope.posts = result.data;
  			if ($scope.posts == 'Problem 1') {
  				console.log('1');
- 				$scope.posts = undefined;
+ 				$scope.posts = 0;
  			}
  			if ($scope.posts == 'Problem 2') {
  				console.log('2');
- 				$scope.posts = undefined;
+ 				$scope.posts = 0;
  			}
- 			if(PostsSrv.getPosts().length<= $scope.posts.length || PostsSrv.getPosts() == undefined || $scope.posts == undefined){
+ 			if(PostsSrv.getPosts().length <= $scope.posts.length || PostsSrv.getPosts() == undefined || $scope.posts == undefined){
  				var i = PostsSrv.getPosts().length;
  			} else {
  				var i =0;
  			}
  			for( ; i<$scope.posts.length; i++ ){
  				PostsSrv.addPost($scope.posts[i]);
- 				
+ 				$scope.posts[i].Rating = Number($scope.posts[i].Rating).toFixed(2);
  			}
  			
  			$scope.data = PostsSrv.getPosts().slice(0, 12);
@@ -68,7 +68,7 @@ app.controller('galleryCtrl',function ( $document, $window, $scope, $http, Posts
  		
  		
  		$scope.data = PostsSrv.getPosts().slice(0, 0);
- 		console.log($scope.data);
+ 		//console.log($scope.data);
  	 	$scope.getMoreData = function () {
  	 	    $scope.data = PostsSrv.getPosts().slice(0, $scope.data.length + 4);
  	 	}

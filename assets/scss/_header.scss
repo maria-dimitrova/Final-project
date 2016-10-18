@@ -1,28 +1,32 @@
 /*----------------------------------------HEADER-------------------------------------------------*/
-
 	
-	%links {
-			font-size: $fontSizeL;
-			line-height: 60px;
-			letter-spacing: 2px;
-	}
+%links {
+	font-size: $fontSizeL;
+	line-height: 60px;
+	letter-spacing: 2px;
+}
+
 body {
 	background-color: $navbarBg;
-	#navbar-height{
+	font-family:'myFirstFont', serif;
+	
+	#navbar-height {
 		height: 110px;
 		background-color: $navbarAcc;
 	}
+	
 	#top-nav {
 		color: $black;
-		#nav-line1{
-		background-color: $textAcc;
-		height: 7px;
-		}
-		#nav-line2{
-		background-color: $navbarAcc;
-		height: 3px;
 		
+		#nav-line1 {
+			background-color: $textAcc;
+			height: 7px;
+			font-family:'myFirstFont', serif;
 		}
-		
+		#nav-line2 {
+			background-color: $navbarAcc;
+			height: 3px;
+			font-family:'myFirstFont', serif;
+		}
 	}
 }
