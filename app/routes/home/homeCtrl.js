@@ -37,7 +37,7 @@ app.controller('homeCtrl', function ($scope, $window, userSrv){
 
 	  window.fbAsyncInit = function() {
 	  FB.init({
-	    appId      : '1120426538045057',
+	    appId      : 'app-id',
 	    cookie     : true,  // enable cookies to allow the server to access 
 	                        // the session
 	    xfbml      : true,  // parse social plugins on this page
